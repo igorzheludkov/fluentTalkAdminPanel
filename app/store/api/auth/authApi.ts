@@ -1,7 +1,14 @@
 import apiSlice from '../apiSlice'
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, User } from 'firebase/auth'
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  User,
+  AuthError
+} from 'firebase/auth'
 import { auth } from '@/firebase/firebaseConfig'
-import { setUser } from '@/store/user/userSlice';
+import { setUser } from '@/store/user/userSlice'
+import { FirebaseAuthErrorCode } from '@/types/errors'
 
 export const userApi = apiSlice.injectEndpoints({
   endpoints: (build) => ({
@@ -39,6 +46,7 @@ export const userApi = apiSlice.injectEndpoints({
         } catch (error: any) {
           const errorCode = error.code
           const errorMessage = error.message
+
           return { error: { data: errorMessage, status: errorCode } }
         }
       },
