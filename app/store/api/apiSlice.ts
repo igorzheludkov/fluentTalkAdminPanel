@@ -6,6 +6,7 @@ export const apiSlice = createApi({
     baseUrl: 'fake',
   }),
   endpoints: () => ({}),
+  tagTypes: ['dialogs']
 });
 
 export default apiSlice;

@@ -1,10 +1,9 @@
-import Header from '@/components/RootLayout/Header';
-import Sidebar from '@/components/RootLayout/Sidebar';
-import { Outlet } from 'react-router-dom';
-import s from './root.module.css';
+import Header from '@/routes/RootLayout/Header'
+import Sidebar from '@/routes/RootLayout/Sidebar'
+import { Outlet } from 'react-router-dom'
+import s from './root.module.css'
 
 export default function Root() {
-
   return (
     <div className={s.wrapper}>
       <Header />
@@ -17,5 +16,5 @@ export default function Root() {
         </div>
       </div>
     </div>
-  );
+  )
 }

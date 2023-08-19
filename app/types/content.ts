@@ -16,7 +16,19 @@ export interface IDialog {
 }
 
 export interface Bookmark {
-    userId: string; // User who bookmarked the content
-    contentId: string; // ID of the bookmarked content
-    createdAt: string
-  }
+  userId: string // User who bookmarked the content
+  contentId: string // ID of the bookmarked content
+  createdAt: string
+}
+
+export interface IDialogCategory {
+  id: string
+  name: string
+  description?: string
+  createdAt: Date
+}
+
+export interface FirebaseDocPayload<T> {
+  id: string
+  payload: T
+}

@@ -1,7 +1,8 @@
-import Content from '@/components/RootLayout/Content'
-import Root from '@/components/RootLayout/root'
+import Root from '@/routes/RootLayout/root'
 import AuthFormBlock from '@/components/blocks/AuthFormBlock'
 import { createBrowserRouter } from 'react-router-dom'
+import DialogCategories from '@/components/pages/DialogCategories'
+import DialogCategoriesManage from '@/components/pages/DialogCategoriesManage'
 
 export const router = createBrowserRouter([
   {
@@ -11,7 +12,15 @@ export const router = createBrowserRouter([
       {
         path: 'auth/',
         element: <AuthFormBlock />
-      }
+      },
+      {
+        path: 'dialog-categories/',
+        element: <DialogCategories />
+      },
+      {
+        path: 'manage-dialog-categories/',
+        element: <DialogCategoriesManage />
+      },
     ]
   }
 ])
