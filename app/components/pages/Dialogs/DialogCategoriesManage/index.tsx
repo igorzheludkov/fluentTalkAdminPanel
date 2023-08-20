@@ -50,15 +50,25 @@ export default function DialogCategoriesManage() {
   return (
     <div className={s.wrapper}>
       <h2>Enter category name and description</h2>
-      <input type='text' placeholder='Name' name='name' value={data.name} onChange={handleChange} />
+      <input
+        type='text'
+        placeholder='Name'
+        name='name'
+        value={data.name}
+        onChange={handleChange}
+        className={s.input}
+      />
       <input
         type='text'
         placeholder='Description'
         name='description'
         value={data.description}
         onChange={handleChange}
+        className={s.input}
       />
-      <button onClick={handleSend}>{paramValue ? 'Edit' : 'Add'} category</button>
+      <button onClick={handleSend} className={s.button}>
+        {paramValue ? 'Edit' : 'Add'} category
+      </button>
     </div>
   )
 }

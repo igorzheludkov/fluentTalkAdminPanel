@@ -1,11 +1,43 @@
 export type TSides = 'ME' | 'COMPANION' | 'THIRD_PERSON' | 'FOURTH_PERSON' | 'FIFTH_PERSON'
 
+export enum ESides {
+  ME = 'ME',
+  COMPANION = 'COMPANION',
+  THIRD_PERSON = 'THIRD_PERSON'
+}
+
+export enum ELevels {
+  one = 'levelOne',
+  two = 'levelTwo',
+  three = 'levelThree'
+}
+
 export interface DialogPart {
-  name: string
+  id: string
   side: TSides
-  levelOne: string[]
-  levelTwo?: string[]
-  levelThree?: string[]
+  levelOne: DialogSentense[]
+  levelTwo?: DialogSentense[]
+  levelThree?: DialogSentense[]
+  createdAt: Date
+}
+
+export interface DialogSentense {
+  id: string
+  dialogPartId: string
+  sentense: string
+  createdAt: Date
+  level: ELevels
+}
+
+export interface DialogFull {
+  id: string
+  title: string
+  description: string
+  dialogParts: DialogPart[]
+  parent: {
+    id: string
+    path: string
+  }
 }
 
 export interface IDialog {
@@ -27,8 +59,28 @@ export interface IDialogCategory {
   description?: string
   createdAt: Date
 }
+export interface IDialogSubCategory {
+  id: string
+  name: string
+  description?: string
+  createdAt: Date
+  parent: {
+    id: string
+    path: string
+  }
+}
 
 export interface FirebaseDocPayload<T> {
+  id: string
+  payload: T
+}
+export interface SubCategoryPayload<T> {
+  parent: string
+  id: string
+  payload: T
+}
+export interface DialogItemPayload<T> {
+  parent: string
   id: string
   payload: T
 }

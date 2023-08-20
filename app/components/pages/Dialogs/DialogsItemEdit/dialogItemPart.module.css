@@ -1,0 +1,49 @@
+/* index.module.css */
+
+.dialogPart {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sideHeader {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  
+  .levelContainer {
+    margin-top: 10px;
+  }
+  
+  .levelLabel {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .sentence {
+    padding: 5px;
+    margin: 5px 0;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
